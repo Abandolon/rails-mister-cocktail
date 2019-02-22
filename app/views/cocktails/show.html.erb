@@ -1,0 +1,22 @@
+<div class="card-index">
+  <h3 class="item-a"><%= @cocktail.name %></h3>
+
+  <%= image_tag url_for(@cocktail.img_url), :class => "item-b" %>
+  <p></p>
+  <p>Add Ingredients To <%= @cocktail.name %></p>
+  <div class="ingredient-row" "item-c">
+    <% @cocktail.doses.each do |dose| %>
+      <div class="col-sm-4">
+       <%= dose.ingredient.name %>  <%= dose.description %>
+       <%= link_to "🗡", dose_path(dose), method: :delete  %>
+      </div>
+      <% end %>
+  </div>
+  <br>
+  <br>
+  <br>
+
+  <%= render 'doses/form', cocktail: @cocktail, :class => "item-d" %></div>
+
+
+<%= link_to "Back To The Menu", cocktails_path  %>
