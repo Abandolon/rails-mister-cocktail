@@ -5,7 +5,7 @@
 
 <div class="row">
   <% @cocktails.each do |cocktail| %>
-    <div class="col-sm-4" "card-index" style="display: inline-grid" >
+    <div class="col-sm-4 card-index" style="display: inline-grid" >
       <%= image_tag url_for(cocktail.img_url), :class => "cocktail_img"  %>
       <%= link_to cocktail.name, cocktail_path(cocktail)  %>
     </div>
