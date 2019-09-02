@@ -1,7 +1,7 @@
 <div class="card-index">
   <h3 class="item-a"><%= @cocktail.name %></h3>
 
-  <%= image_tag url_for(@cocktail.img_url), :class => "item-b" %>
+  <%= cl_image_tag @cocktail.photo, :class => "item-b" %>
   <p></p>
   <p>Add Ingredients To <%= @cocktail.name %></p>
   <div class="ingredient-row" "item-c">
